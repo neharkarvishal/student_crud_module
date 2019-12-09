@@ -19,7 +19,9 @@
     "start": "node index.js"
   },
   "dependencies": {
-    "express": "latest"
+    "express": "latest",
+    "mongoose": "latest",
+    "jsonwebtoken": "latest"
   },
   "devDependencies": {
     "babel-eslint": "latest",
