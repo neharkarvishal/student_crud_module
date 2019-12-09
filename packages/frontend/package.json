@@ -1,0 +1,37 @@
+{
+  "name": "@student_module/frontend",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Student CRUD module React frontend.",
+  "author": "Vishal <neharkar.vishal@gmail.com>",
+  "homepage": "https://github.com/neharkarvishal/student_crud_module#readme",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/neharkarvishal/student_crud_module.git"
+  },
+  "bugs": {
+    "url": "https://github.com/neharkarvishal/student_crud_module/issues"
+  },
+  "dependencies": {
+    "react": "latest",
+    "react-dom": "latest",
+    "react-scripts": "latest"
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject"
+  },
+  "eslintConfig": {
+    "extends": "react-app"
+  },
+  "proxy": "http://localhost:8080",
+  "browserslist": [
+    ">0.2%",
+    "not dead",
+    "not ie <= 11",
+    "not op_mini all"
+  ]
+}

@@ -1,0 +1,17 @@
+{
+  "name": "student_crud_module",
+  "version": "0.1.0",
+  "description": "Student CRUD application monorepo.",
+  "repository": "https://github.com/neharkarvishal/student_crud_module.git",
+  "author": "Vishal <neharkar.vishal@gmail.com>",
+  "license": "MIT",
+  "private": true,
+  "devDependencies": {
+    "lerna": "latest"
+  },
+  "scripts": {
+    "bootstrap": "lerna bootstrap",
+    "hoist": "lerna bootstrap --hoist",
+    "start": "lerna run start --stream"
+  }
+}

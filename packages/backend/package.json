@@ -1,0 +1,24 @@
+{
+  "name": "@student_module/backend",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Student CRUD module Express backend.",
+  "author": "Vishal <neharkar.vishal@gmail.com>",
+  "homepage": "https://github.com/neharkarvishal/student_crud_module#readme",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/neharkarvishal/student_crud_module.git"
+  },
+  "bugs": {
+    "url": "https://github.com/neharkarvishal/student_crud_module/issues"
+  },
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node index.js"
+  },
+  "dependencies": {
+    "express": "latest"
+  }
+}
