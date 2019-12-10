@@ -1,5 +1,8 @@
 const express = require('express');
 const { Student } = require('../models/student');
+const auth = require('./../middlewares/auth');
+const admin = require('./../middlewares/admin');
+const validateObjectId = require('./../middlewares/validateObjectId');
 
 const router = express.Router();
 
@@ -17,7 +20,7 @@ router.post('/', async (request, response) => {
   return response.send(student);
 });
 
-router.put('/:id', async (request, response) => {
+router.put('/:id', [admin, validateObjectId], async (request, response) => {
   const { id } = request.params;
   const { name, email, phone } = request.body;
   const student = await Student.findByIdAndUpdate(
@@ -32,17 +35,21 @@ router.put('/:id', async (request, response) => {
   return response.send(student);
 });
 
-router.delete('/:id', async (request, response) => {
-  const { id } = request.params;
-  const student = await Student.findByIdAndRemove(id);
-  if (!student) {
-    return response.status(404).send('The student not found.');
-  }
+router.delete(
+  '/:id',
+  [admin, auth, validateObjectId],
+  async (request, response) => {
+    const { id } = request.params;
+    const student = await Student.findByIdAndRemove(id);
+    if (!student) {
+      return response.status(404).send('The student not found.');
+    }
 
-  return response.send(student);
-});
+    return response.send(student);
+  },
+);
 
-router.get('/:id', async (request, response) => {
+router.get('/:id', validateObjectId, async (request, response) => {
   const { id } = request.params;
   const student = await Student.findById(id);
   if (!student) {

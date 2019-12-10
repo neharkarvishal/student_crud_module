@@ -17,6 +17,7 @@ const Student = mongoose.model(
     },
     isAdmitted: {
       type: Boolean,
+      default: false,
     },
     createdAt: {
       type: Date,
