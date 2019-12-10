@@ -16,7 +16,17 @@
   "dependencies": {
     "react": "latest",
     "react-dom": "latest",
-    "react-scripts": "latest"
+    "react-scripts": "latest",
+    "axios": "latest",
+    "bootstrap": "latest",
+    "react-redux": "latest",
+    "react-router": "latest",
+    "react-router-dom": "latest",
+    "redux": "latest",
+    "redux-logger": "latest",
+    "redux-persist": "latest",
+    "redux-promise-middleware": "latest",
+    "redux-thunk": "latest"
   },
   "devDependencies": {
     "babel-eslint": "latest",

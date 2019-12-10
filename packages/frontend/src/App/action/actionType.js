@@ -1,0 +1,4 @@
+export default {
+  STUDENT_LIST: 'STUDENT_LIST',
+  STUDENT_DETAIL: 'STUDENT_DETAIL',
+};
