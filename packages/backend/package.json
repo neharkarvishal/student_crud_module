@@ -21,7 +21,9 @@
   "dependencies": {
     "express": "latest",
     "mongoose": "latest",
-    "jsonwebtoken": "latest"
+    "jsonwebtoken": "latest",
+    "bcrypt": "latest",
+    "config": "latest"
   },
   "devDependencies": {
     "babel-eslint": "latest",

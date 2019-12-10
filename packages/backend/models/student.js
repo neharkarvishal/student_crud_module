@@ -5,15 +5,26 @@ const Student = mongoose.model(
   new mongoose.Schema({
     name: {
       type: String,
+      required: true,
     },
     email: {
       type: String,
+      required: true,
     },
     phone: {
       type: String,
+      required: true,
     },
     isAdmitted: {
       type: Boolean,
+    },
+    createdAt: {
+      type: Date,
+      default: Date.now,
+    },
+    updatedAt: {
+      type: Date,
+      default: Date.now,
     },
   }),
 );
