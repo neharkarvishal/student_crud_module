@@ -17,6 +17,7 @@ import Div, {
 /* Component for rendering single student in the table */
 class Student extends PureComponent {
   render() {
+    if (!this.props && !this.props.studentDetail) return <Loading />;
     const student = this.props.studentDetail;
     return (
       <Row uniqkey={student._id}>
@@ -46,10 +47,12 @@ class StudentList extends PureComponent {
 
   render() {
     if (
+      this.props &&
       this.props.studentListStoreState &&
       this.props.studentListStoreState.isLoading
     )
       return <Loading />;
+
     const { studentList } = this.props.studentListStoreState;
     const renderStudentList = studentList.map(studentDetail => (
       <Student key={studentDetail.id} studentDetail={studentDetail} />
