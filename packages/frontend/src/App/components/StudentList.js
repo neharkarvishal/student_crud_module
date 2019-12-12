@@ -47,12 +47,10 @@ class StudentList extends PureComponent {
 
   render() {
     if (
-      this.props &&
-      this.props.studentListStoreState &&
-      this.props.studentListStoreState.isLoading
+      !this.props.studentListStoreState &&
+      !this.props.studentListStoreState.isLoading
     )
       return <Loading />;
-
     const { studentList } = this.props.studentListStoreState;
     const renderStudentList = studentList.map(studentDetail => (
       <Student key={studentDetail.id} studentDetail={studentDetail} />

@@ -10,7 +10,6 @@ export class Greeting extends Component {
 
   onSubmit = () => {
     const { name } = this.state;
-
     fetch(`/greeting?name=${name}`)
       .then(response => response.json())
       .then(({ message }) => this.setState({ message, error: null }))

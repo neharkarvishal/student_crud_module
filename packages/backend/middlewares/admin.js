@@ -4,5 +4,5 @@ module.exports = (request, response, next) => {
     return response.status(403).send('Access denied.');
   }
 
-  next();
+  return next();
 };

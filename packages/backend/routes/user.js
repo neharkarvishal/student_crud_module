@@ -18,6 +18,7 @@ router.post('/', async (request, response) => {
   const token = user.generateAuthToken();
 
   return response.header('x-auth-token', token).send({
+    // eslint-disable-next-line no-underscore-dangle
     _id: user._id,
     name: user.name,
     email: user.email,

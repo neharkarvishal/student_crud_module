@@ -1,9 +1,9 @@
 import { connect } from 'react-redux';
-import React, { PureComponent } from 'react';
+import React, { Component } from 'react';
 import { adminLoginAction } from '../action/adminLoginAction';
 import Div, { Button } from '../htmlTags';
 
-export class LoginForm extends PureComponent {
+export class LoginForm extends Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -21,7 +21,7 @@ export class LoginForm extends PureComponent {
   componentDidUpdate() {
     const { loginStatus } = this.props.authentication;
     if (loginStatus === 'authenticated') {
-      this.props.history.push('/student');
+      this.props.history.push('/students');
     }
   }
 
@@ -55,9 +55,8 @@ export class LoginForm extends PureComponent {
   }
 
   render() {
-    const { email, password, error } = this.state;
     const { loginStatus } = this.props.authentication;
-    const isLoggedIn = loginStatus !== 'authenticationPending';
+    if (loginStatus === 'authenticated') this.props.history.push('/students');
     return (
       <Div
         style={{
@@ -88,7 +87,6 @@ export class LoginForm extends PureComponent {
                 value={this.state.username}
                 onChange={this.handlePhoneChange}
               />
-
               <label>Password</label>
               <input
                 type="password"
@@ -96,7 +94,6 @@ export class LoginForm extends PureComponent {
                 value={this.state.password}
                 onChange={this.handlePasswordChange}
               />
-
               <input type="submit" value="Log In" data-test="submit" />
             </form>
           </Div>
@@ -107,6 +104,8 @@ export class LoginForm extends PureComponent {
 }
 
 export default connect(
-  state => ({ authentication: state.authentication }),
+  state => ({
+    authentication: state.authentication,
+  }),
   null,
 )(LoginForm);

@@ -5,8 +5,7 @@ const API = URLS.apiUrl;
 
 export class RequestHandler {
   static login({ email, password }) {
-    const res = axios.post(`${API}/auth`, { email, password });
-    return res;
+    return axios.post(`${API}/auth`, { email, password });
   }
 
   static fetchStudents() {

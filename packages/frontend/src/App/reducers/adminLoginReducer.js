@@ -52,6 +52,6 @@ export default function adminLoginReducer(state = initState, action) {
       return updatedState;
     }
     default:
+      return state;
   }
-  return state;
 }

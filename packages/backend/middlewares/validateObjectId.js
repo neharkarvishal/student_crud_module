@@ -6,5 +6,5 @@ module.exports = (request, response, next) => {
     return response.status(404).send('Invalid ID.');
   }
 
-  next();
+  return next();
 };
